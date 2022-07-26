@@ -36,15 +36,14 @@ class Solution:
             if carry == True:
                 ary[i] += 1
             
-            if ary[i] > 9 and len(ary) > 1:
+            if ary[i] > 9:
                 ary[i] = 0
                 carry = True
-            elif ary[i] > 9 and len(ary) == 1:
-                ary[i] = 0
-                ary.insert(0, 0)
-                return ary
             else:
                 carry = False
+
+            if ary[i] == 0 and i == 0:
+                ary.insert(0, 1)
         
         return ary
 
